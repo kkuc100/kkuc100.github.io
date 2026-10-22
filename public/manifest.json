@@ -4,8 +4,8 @@
   "description": "Kevin Kuc's digital portfolio showcasing expertise in data science, machine learning, and AI innovation. Master's in Data Science from UC Berkeley.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f3f8fa",
-  "theme_color": "#68A4C4",
+  "background_color": "#121410",
+  "theme_color": "#121410",
   "orientation": "portrait-primary",
   "icons": [
     {
