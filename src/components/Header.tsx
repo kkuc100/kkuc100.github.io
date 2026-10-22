@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppBar, Toolbar, Typography, Box, IconButton, Drawer, List, ListItem, ListItemText, useTheme, useMediaQuery } from '@mui/material'
+import { AppBar, Toolbar, Typography, Box, IconButton, Drawer, List, ListItemButton, ListItemText, useTheme, useMediaQuery } from '@mui/material'
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
 import { Link, useLocation } from 'react-router-dom'
 
@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
+    setMobileOpen((open) => !open)
   }
 
   const navigationItems = [
@@ -20,37 +20,33 @@ const Header: React.FC = () => {
     { label: 'Contact', path: '/contact' },
   ]
 
-  const isActive = (path: string) => {
-    return location.pathname === path
-  }
+  const isActive = (path: string) => location.pathname === path
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <IconButton
-        sx={{ display: { xs: 'block', md: 'none' }, position: 'absolute', right: 10, top: 10 }}
-        onClick={handleDrawerToggle}
+        aria-label="close menu"
+        sx={{ position: 'absolute', right: 8, top: 8, color: 'text.primary' }}
       >
         <CloseIcon />
       </IconButton>
-      <List>
+      <List sx={{ pt: 6 }}>
         {navigationItems.map((item) => (
-          <ListItem key={item.path} disablePadding>
-            <ListItemText 
-              sx={{ textAlign: 'center' }}
-              primary={
-                <Link 
-                  to={item.path} 
-                  style={{ 
-                    textDecoration: 'none', 
-                    color: isActive(item.path) ? theme.palette.primary.main : '#1e4356',
-                    fontWeight: isActive(item.path) ? 'bold' : 'normal'
-                  }}
-                >
-                  {item.label}
-                </Link>
-              } 
+          <ListItemButton
+            key={item.path}
+            component={Link}
+            to={item.path}
+            sx={{ justifyContent: 'center', py: 1.5 }}
+          >
+            <ListItemText
+              primary={item.label}
+              primaryTypographyProps={{
+                textAlign: 'center',
+                fontWeight: isActive(item.path) ? 700 : 500,
+                color: isActive(item.path) ? 'primary.light' : 'text.primary',
+              }}
             />
-          </ListItem>
+          </ListItemButton>
         ))}
       </List>
     </Box>
@@ -59,46 +55,49 @@ const Header: React.FC = () => {
   return (
     <>
       <AppBar position="fixed" color="default" enableColorOnDark>
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Toolbar sx={{ justifyContent: 'space-between', gap: 2 }}>
           <Typography
             variant="h6"
             component="div"
             sx={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '20px',
+              fontSize: { xs: '16px', sm: '20px' },
               fontWeight: 700,
               letterSpacing: '-0.02em',
+              minWidth: 0,
             }}
           >
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              Kevin Kuc · Senior Data Scientist
+              Kevin Kuc
+              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' }, color: 'primary.light' }}>
+                {' · Senior Data Scientist'}
+              </Box>
             </Link>
           </Typography>
-          
+
           {isMobile ? (
             <IconButton
               color="inherit"
-              aria-label="open drawer"
-              edge="start"
+              aria-label="open menu"
+              edge="end"
               onClick={handleDrawerToggle}
-              sx={{ ml: 2 }}
             >
               <MenuIcon />
             </IconButton>
           ) : (
-            <Box sx={{ display: 'flex', gap: 3 }}>
+            <Box sx={{ display: 'flex', gap: 3, flexShrink: 0 }}>
               {navigationItems.map((item) => (
                 <Typography
                   key={item.path}
                   component={Link}
                   to={item.path}
                   sx={{
-                    color: isActive(item.path) ? theme.palette.primary.light : 'inherit',
+                    color: isActive(item.path) ? 'primary.light' : 'text.primary',
                     textDecoration: 'none',
                     fontSize: '14px',
                     fontWeight: isActive(item.path) ? 700 : 500,
                     '&:hover': {
-                      color: theme.palette.secondary.main,
+                      color: 'secondary.light',
                     },
                   }}
                 >
@@ -109,7 +108,7 @@ const Header: React.FC = () => {
           )}
         </Toolbar>
       </AppBar>
-      
+
       <Drawer
         variant="temporary"
         open={mobileOpen}

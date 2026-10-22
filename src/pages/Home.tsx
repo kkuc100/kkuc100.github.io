@@ -1,12 +1,14 @@
 import React from 'react'
 import { Box, Container, Typography, Grid, Card, CardContent, CardActions, Button, Stack } from '@mui/material'
 import { SmartToy, TrendingUp, Gavel, Psychology } from '@mui/icons-material'
-import { useTheme } from '@mui/material/styles'
+import { alpha, useTheme } from '@mui/material/styles'
+import { Link as RouterLink } from 'react-router-dom'
 import { getImagePath } from '../utils/imageUtils'
 
 const Home: React.FC = () => {
   const theme = useTheme()
   const heroBgPath = getImagePath('/img/hero-bg.jpg')
+  const heroBackground = `linear-gradient(100deg, ${alpha(theme.palette.background.default, 0.92)} 0%, ${alpha(theme.palette.background.paper, 0.7)} 48%, ${alpha(theme.palette.primary.main, 0.28)} 100%), url('${heroBgPath}') center center / cover no-repeat`
 
   const featuredProjects = [
     {
@@ -41,8 +43,7 @@ const Home: React.FC = () => {
       <Box
         sx={{
           minHeight: '100vh',
-          background: `linear-gradient(90deg, rgba(12,14,24,0.9) 0%, rgba(17,24,39,0.85) 40%, rgba(124,58,237,0.18) 100%), url('${heroBgPath}') center top no-repeat`,
-          backgroundSize: 'cover',
+          background: heroBackground,
           position: 'relative',
           overflowX: 'hidden',
           display: 'flex',
@@ -128,7 +129,7 @@ const Home: React.FC = () => {
                       justifyContent: 'center',
                       mx: 'auto',
                       mb: 2,
-                      backgroundColor: 'rgba(124,58,237,0.12)',
+                      backgroundColor: alpha(theme.palette.primary.main, 0.16),
                     }}
                   >
                     <Box sx={{ color: theme.palette.primary.light, fontSize: '36px' }}>
@@ -151,11 +152,11 @@ const Home: React.FC = () => {
                       variant="outlined"
                       size="small"
                       sx={{
-                        borderColor: theme.palette.primary.main,
-                        color: theme.palette.primary.light,
+                        borderColor: 'primary.main',
+                        color: 'primary.light',
                         '&:hover': {
-                          borderColor: theme.palette.primary.main,
-                          backgroundColor: 'rgba(124,58,237,0.12)',
+                          borderColor: 'primary.light',
+                          backgroundColor: alpha(theme.palette.primary.main, 0.12),
                         },
                       }}
                     >
@@ -171,7 +172,8 @@ const Home: React.FC = () => {
           <Button
             variant="outlined"
             color="primary"
-            href="/projects"
+            component={RouterLink}
+            to="/projects"
           >
             View all projects
           </Button>

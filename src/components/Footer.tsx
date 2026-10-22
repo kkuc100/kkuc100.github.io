@@ -1,16 +1,21 @@
 import React from 'react'
 import { Box, Container, Typography, Link, Grid } from '@mui/material'
-import { useTheme } from '@mui/material/styles'
+import { Link as RouterLink } from 'react-router-dom'
 
 const Footer: React.FC = () => {
-  const theme = useTheme()
+  const linkSx = {
+    textDecoration: 'none',
+    '&:hover': { color: 'secondary.light' },
+  }
 
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: '#0b0f19',
-        color: 'white',
+        backgroundColor: 'background.default',
+        color: 'text.primary',
+        borderTop: '1px solid',
+        borderColor: 'divider',
         py: 4,
         mt: 'auto',
       }}
@@ -18,56 +23,86 @@ const Footer: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" sx={{ mb: 2, color: theme.palette.secondary.main }}>
+            <Typography variant="h6" sx={{ mb: 2, color: 'primary.light' }}>
               Useful Links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              <Link href="/" color="inherit" sx={{ textDecoration: 'none', '&:hover': { color: theme.palette.secondary.main } }}>
+              <Link component={RouterLink} to="/" color="inherit" sx={linkSx}>
                 Home
               </Link>
-              <Link href="/about" color="inherit" sx={{ textDecoration: 'none', '&:hover': { color: theme.palette.secondary.main } }}>
+              <Link component={RouterLink} to="/about" color="inherit" sx={linkSx}>
                 About
               </Link>
-              <Link href="/projects" color="inherit" sx={{ textDecoration: 'none', '&:hover': { color: theme.palette.secondary.main } }}>
+              <Link component={RouterLink} to="/projects" color="inherit" sx={linkSx}>
                 Projects
+              </Link>
+              <Link component={RouterLink} to="/contact" color="inherit" sx={linkSx}>
+                Contact
               </Link>
             </Box>
           </Grid>
-          
-          
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" sx={{ mb: 2, color: theme.palette.secondary.main }}>
-              Contact Us
+
+          <Grid item xs={12} sm={6} md={4}>
+            <Typography variant="h6" sx={{ mb: 2, color: 'primary.light' }}>
+              Contact
             </Typography>
-            <Typography variant="body2" sx={{ mb: 1 }}>
-              Miami, FL<br />
+            <Typography variant="body2" sx={{ mb: 1, color: 'text.secondary' }}>
+              New York, NY
+              <br />
               United States
             </Typography>
             <Typography variant="body2" sx={{ mb: 1 }}>
-              <strong>Email:</strong> kkuc234@gmail.com
+              <Box component="span" sx={{ color: 'text.secondary' }}>Email: </Box>
+              <Link href="mailto:kkuc234@gmail.com" color="inherit" sx={linkSx}>
+                kkuc234@gmail.com
+              </Link>
             </Typography>
-            <Link 
-              href="https://github.com/kkuc100" 
-              target="_blank"
-              rel="noopener noreferrer"
-              color="inherit" 
-              sx={{ textDecoration: 'none', '&:hover': { color: theme.palette.secondary.main } }}
-            >
-              GitHub
-            </Link>
+            <Box sx={{ display: 'flex', gap: 2 }}>
+              <Link
+                href="https://github.com/kkuc100"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+                sx={linkSx}
+              >
+                GitHub
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/kevinkuc"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+                sx={linkSx}
+              >
+                LinkedIn
+              </Link>
+            </Box>
           </Grid>
         </Grid>
-        
-        <Box sx={{ borderTop: '1px solid rgba(148,163,184,0.12)', mt: 3, pt: 2, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-          <Typography variant="body2">
-            © Copyright <strong>Kevin Kuc</strong>. All Rights Reserved
+
+        <Box
+          sx={{
+            borderTop: '1px solid',
+            borderColor: 'divider',
+            mt: 3,
+            pt: 2,
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: 1,
+          }}
+        >
+          <Typography variant="body2" color="text.secondary">
+            © Copyright <Box component="strong" sx={{ color: 'text.primary' }}>Kevin Kuc</Box>. All Rights Reserved
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body2" color="text.secondary">
             Designed by{' '}
-            <Link 
-              href="https://www.linkedin.com/in/kevinkuc" 
-              color="inherit" 
-              sx={{ textDecoration: 'none', '&:hover': { color: theme.palette.secondary.main } }}
+            <Link
+              href="https://www.linkedin.com/in/kevinkuc"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="inherit"
+              sx={linkSx}
             >
               Kevin Kuc
             </Link>

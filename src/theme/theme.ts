@@ -1,27 +1,41 @@
-import { createTheme } from '@mui/material/styles'
+import { alpha, createTheme } from '@mui/material/styles'
+
+const ink = '#121410'
+const paper = '#1c211e'
+const copper = '#e0a15a'
+const copperLight = '#f2c891'
+const copperDark = '#b87a2e'
+const sage = '#5eae98'
+const sageLight = '#9ed9c8'
+const sageDark = '#3a8774'
+const cream = '#f6f1e8'
+const mist = '#c4bfb4'
+const line = 'rgba(232, 214, 186, 0.16)'
 
 const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#7c3aed', // violet-600
-      light: '#a78bfa',
-      dark: '#5b21b6',
+      main: copper,
+      light: copperLight,
+      dark: copperDark,
+      contrastText: '#1c140c',
     },
     secondary: {
-      main: '#06b6d4', // cyan-500
-      light: '#22d3ee',
-      dark: '#0891b2',
+      main: sage,
+      light: sageLight,
+      dark: sageDark,
+      contrastText: '#10211c',
     },
     background: {
-      default: '#0b0f19', // base canvas
-      paper: '#111827', // elevated surfaces
+      default: ink,
+      paper,
     },
     text: {
-      primary: '#e5e7eb',
-      secondary: '#9ca3af',
+      primary: cream,
+      secondary: mist,
     },
-    divider: 'rgba(148,163,184,0.2)'
+    divider: line,
   },
   typography: {
     fontFamily: 'Inter, "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
@@ -50,15 +64,24 @@ const theme = createTheme({
     body2: {
       fontSize: '14px',
       lineHeight: 1.6,
-    }
+    },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: ink,
+          color: cream,
+        },
+      },
+    },
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#0b0f19',
-          backgroundImage: 'linear-gradient(to right, rgba(124,58,237,0.12), rgba(6,182,212,0.12))',
-          boxShadow: '0 1px 0 0 rgba(148,163,184,0.12)'
+          backgroundColor: alpha(ink, 0.9),
+          backgroundImage: 'none',
+          backdropFilter: 'blur(14px)',
+          boxShadow: `0 1px 0 0 ${alpha(copper, 0.4)}`,
         },
       },
     },
@@ -70,29 +93,23 @@ const theme = createTheme({
           fontWeight: 600,
           padding: '10px 18px',
         },
-        containedPrimary: {
-          backgroundImage: 'linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%)',
-          color: '#0b0f19',
-          '&:hover': {
-            filter: 'brightness(1.05)'
-          }
-        },
         outlined: {
-          borderColor: 'rgba(124,58,237,0.5)',
+          borderColor: alpha(copper, 0.55),
           '&:hover': {
-            borderColor: '#7c3aed',
-            backgroundColor: 'rgba(124,58,237,0.08)'
-          }
-        }
+            borderColor: copper,
+            backgroundColor: alpha(copper, 0.1),
+          },
+        },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00))',
-          boxShadow: '0 10px 30px rgba(0,0,0,0.35)',
+          backgroundColor: paper,
+          backgroundImage: 'none',
+          boxShadow: '0 16px 40px rgba(0, 0, 0, 0.28)',
           borderRadius: '14px',
-          border: '1px solid rgba(148,163,184,0.12)'
+          border: `1px solid ${line}`,
         },
       },
     },
@@ -100,9 +117,18 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundImage: 'none',
-        }
-      }
-    }
+          backgroundColor: paper,
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: paper,
+          color: cream,
+        },
+      },
+    },
   },
 })
 
