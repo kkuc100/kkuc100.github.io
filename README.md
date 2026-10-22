@@ -64,7 +64,7 @@ Building production-ready ML systems, exploring cutting-edge NLP applications, a
 - **Portfolio**: [kkuc100.github.io](https://kkuc100.github.io)
 - **Email**: kkuc234@gmail.com
 - **LinkedIn**: [kevinkuc](https://www.linkedin.com/in/kevinkuc)
-- **Location**: Miami, FL
+- **Location**: New York, NY
 
 ## 📊 GitHub Stats
 
