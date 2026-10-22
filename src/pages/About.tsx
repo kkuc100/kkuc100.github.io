@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Typography, Box, Grid, Paper } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
-import { useTheme } from '@mui/material/styles'
+import { alpha, useTheme } from '@mui/material/styles'
 import { getImagePath } from '../utils/imageUtils'
 
 const About: React.FC = () => {
@@ -32,8 +32,9 @@ const About: React.FC = () => {
           py: 4,
           px: 3,
           borderRadius: 2,
-          background: 'linear-gradient(90deg, rgba(124,58,237,0.18) 0%, rgba(6,182,212,0.12) 100%)',
-          border: '1px solid rgba(148,163,184,0.12)'
+          background: `linear-gradient(90deg, ${alpha(theme.palette.primary.main, 0.2)} 0%, ${alpha(theme.palette.secondary.main, 0.14)} 100%)`,
+          border: '1px solid',
+          borderColor: 'divider',
         }}
       >
         <Typography variant="h4" gutterBottom sx={{ color: 'text.primary' }}>
@@ -50,11 +51,14 @@ const About: React.FC = () => {
           <Box
             component="img"
             src={canadaImagePath}
-            alt="Kevin Kuc - Data Scientist and AI Engineer professional photo"
+            alt="Kevin Kuc standing at a mountain overlook"
             sx={{
               width: '100%',
               height: 'auto',
               borderRadius: 2,
+              display: 'block',
+              border: '1px solid',
+              borderColor: 'divider',
             }}
           />
         </Grid>
@@ -79,7 +83,7 @@ const About: React.FC = () => {
       </Grid>
 
       {/* Facts Section */}
-      <Paper sx={{ p: 4, mb: 6, backgroundColor: 'rgba(255,255,255,0.02)', border: '1px solid rgba(148,163,184,0.12)' }}>
+      <Paper sx={{ p: 4, mb: 6, border: '1px solid', borderColor: 'divider' }}>
         <Grid container spacing={4}>
           {facts.map((fact, index) => (
             <Grid item xs={6} md={3} key={index}>

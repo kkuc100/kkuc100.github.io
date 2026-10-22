@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kevin Kuc</title>
+    <meta name="theme-color" content="#121410" />
+    <script>
+      // GitHub Pages has no SPA fallback. Send unknown paths back to the
+      // site root with the path in the query string; index.html restores it.
+      (function (l) {
+        var path = l.pathname.slice(1).replace(/&/g, '~and~')
+        var query = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : ''
+        l.replace(l.protocol + '//' + l.host + '/?/' + path + query + l.hash)
+      })(window.location)
+    </script>
+  </head>
+  <body style="margin:0;background:#121410"></body>
+</html>

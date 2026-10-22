@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Typography, Box, Grid, Card, CardContent, CardActions, Button, Chip, Stack } from '@mui/material'
-import { useTheme } from '@mui/material/styles'
+import { alpha, useTheme } from '@mui/material/styles'
 
 type Project = {
   title: string
@@ -76,8 +76,9 @@ const Projects: React.FC = () => {
           py: 4,
           px: 3,
           borderRadius: 2,
-          background: 'linear-gradient(90deg, rgba(124,58,237,0.18) 0%, rgba(6,182,212,0.12) 100%)',
-          border: '1px solid rgba(148,163,184,0.12)'
+          background: `linear-gradient(90deg, ${alpha(theme.palette.primary.main, 0.2)} 0%, ${alpha(theme.palette.secondary.main, 0.14)} 100%)`,
+          border: '1px solid',
+          borderColor: 'divider',
         }}
       >
         <Typography variant="h4" gutterBottom sx={{ color: 'text.primary' }}>
@@ -96,10 +97,6 @@ const Projects: React.FC = () => {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00))',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.35)',
-                borderRadius: '14px',
-                border: '1px solid rgba(148,163,184,0.12)'
               }}
             >
               <CardContent sx={{ flexGrow: 1 }}>
@@ -111,15 +108,15 @@ const Projects: React.FC = () => {
                     label={project.links.length > 0 ? 'Public' : 'Private'}
                     size="small"
                     sx={{
-                      backgroundColor: project.links.length > 0 
-                        ? 'rgba(6,182,212,0.15)' 
-                        : 'rgba(148,163,184,0.15)',
-                      color: project.links.length > 0 
-                        ? theme.palette.secondary.light 
+                      backgroundColor: project.links.length > 0
+                        ? alpha(theme.palette.secondary.main, 0.16)
+                        : alpha(theme.palette.text.secondary, 0.12),
+                      color: project.links.length > 0
+                        ? theme.palette.secondary.light
                         : theme.palette.text.secondary,
-                      borderColor: project.links.length > 0 
-                        ? theme.palette.secondary.main 
-                        : 'rgba(148,163,184,0.35)',
+                      borderColor: project.links.length > 0
+                        ? theme.palette.secondary.main
+                        : 'divider',
                       ml: 1,
                       height: '24px',
                       fontSize: '0.7rem',
@@ -138,9 +135,9 @@ const Projects: React.FC = () => {
                       label={tag}
                       size="small"
                       sx={{
-                        backgroundColor: 'rgba(124,58,237,0.12)',
+                        backgroundColor: alpha(theme.palette.primary.main, 0.14),
                         color: theme.palette.primary.light,
-                        borderColor: 'rgba(124,58,237,0.35)'
+                        borderColor: alpha(theme.palette.primary.main, 0.4),
                       }}
                       variant="outlined"
                     />
@@ -158,11 +155,11 @@ const Projects: React.FC = () => {
                       variant="outlined"
                       size="small"
                       sx={{
-                        borderColor: theme.palette.primary.main,
-                        color: theme.palette.primary.light,
+                        borderColor: 'primary.main',
+                        color: 'primary.light',
                         '&:hover': {
-                          borderColor: theme.palette.primary.main,
-                          backgroundColor: 'rgba(124,58,237,0.12)'
+                          borderColor: 'primary.light',
+                          backgroundColor: alpha(theme.palette.primary.main, 0.12),
                         }
                       }}
                     >
