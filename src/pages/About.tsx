@@ -9,18 +9,20 @@ const About: React.FC = () => {
   const canadaImagePath = getImagePath('/img/canada.jpg')
 
   const facts = [
-    { number: 5, label: 'Clients' },
-    { number: 37, label: 'Projects' },
-    { number: 320, label: 'Project Hours Worked' },
-    { number: 27, label: 'Masters of Data Science Credits' },
+    { number: 2024, label: 'UC Berkeley MIDS Graduate' },
+    { number: 2020, label: 'USMC Captain (2020-2024)' },
+    { number: 2026, label: 'Senior Applied Scientist Role' },
+    { number: 1, label: 'Active TS/SCI Clearance' },
   ]
 
   const achievements = [
-    'Master of Information and Data Science from UC Berkeley, specializing in machine learning and production ML systems',
-    'Bachelor of Science in Mechanical Engineering with Mathematics minor from the University of Alabama, providing strong analytical foundations',
-    'Built production ML systems: XGBoost model on AWS SageMaker for real estate predictions, RAG applications for legal document analysis, and decentralized AI platforms with blockchain integration',
-    'Developed deep learning models: LSTM achieving 92% accuracy for diabetic patient readmission prediction, BERT-based NLP models for sentiment analysis, and transformer architectures for various NLP tasks',
-    'Full-stack development experience: React/TypeScript frontends, FastAPI backends, serverless AWS architectures, and smart contract development on Ethereum/Arbitrum',
+    'Senior Applied Scientist at a stealth NYC startup since May 2026, working on drone imagery segmentation with SAM 3, GraphRAG systems, and MCP tools for production ML workflows',
+    'Previously at KAI: Built air-gapped llama.cpp LLM deployments for a Fortune 100 utility, managed vLLM serving infrastructure on NVIDIA DGX clusters, and engineered petabyte-scale log processing pipelines',
+    'Deloitte: Data scientist on TS/SCI programs with production LLM applications for defense and intelligence customers',
+    'SciTec / Space Development Agency: CNN externship focused on space-based defense systems and advanced analytics',
+    'US Marine Corps Ground Intelligence Officer, Captain (2020-2024): Led intelligence operations and analytical workflows. Active TS/SCI clearance holder',
+    'UC Berkeley Master of Information and Data Science (MIDS) 2024; University of Alabama BSME with Mathematics minor 2020',
+    'Founder of Neural Runner LLC: Data science, machine learning, and AI consulting. Previously ran a profitable CAD consultancy',
   ]
 
   return (
@@ -67,7 +69,7 @@ const About: React.FC = () => {
             About Me
           </Typography>
           <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.7 }}>
-            I'm a senior data scientist building production ML systems and AI applications. My background spans machine learning, NLP, and full-stack development, with experience deploying models to production and creating end-to-end data science solutions.
+            I'm a Senior Applied Scientist specializing in LLMs, RAG systems, and geospatial computer vision. Currently building production ML at a stealth NYC startup. Former US Marine Corps Intelligence Officer with active TS/SCI clearance. I bring technical depth, operational discipline, and a track record of deploying ML systems that solve real-world problems.
           </Typography>
           <Box>
             {achievements.map((achievement, index) => (

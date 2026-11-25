@@ -1,80 +1,131 @@
-# Kevin Kuc - Senior Data Scientist 👋
+# Kevin Kuc - Senior Applied Scientist Portfolio
 
-Welcome to my GitHub profile! I'm a senior data scientist building production ML systems and AI applications, specializing in NLP, predictive modeling, and full-stack development.
+[![Deploy to GitHub Pages](https://github.com/kkuc100/kkuc100.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/kkuc100/kkuc100.github.io/actions/workflows/deploy.yml)
 
-## 🚀 Featured Projects
+Professional portfolio website for Kevin Kuc, Senior Applied Scientist specializing in LLMs, RAG systems, and geospatial computer vision.
 
-### 🌐 [Portfolio Website](https://kkuc100.github.io)
-Modern portfolio website showcasing my projects and expertise. Built with React, TypeScript, and Material-UI.
+**Live Site:** [kevinkuc.com](https://kevinkuc.com) | [kkuc100.github.io](https://kkuc100.github.io)
 
-### 🤖 RAGMint - Decentralized AI Platform
-Full-stack decentralized AI platform with token-based payments on Arbitrum L2. Integrates multiple LLMs (Llama 3, Claude 3.5 Sonnet, Amazon Nova) via AWS Bedrock, with React Native mobile apps, FastAPI backend, and Solidity smart contracts.
+## About
 
-### 📊 Real Estate Market Analysis
-Production ML system predicting property days on market using XGBoost deployed on AWS SageMaker. Serverless architecture with React frontend, Lambda proxy, and real-time predictions via API Gateway. Handles multi-source data integration from Zillow and Realtor.com APIs.
+I'm a Senior Applied Scientist at a stealth NYC startup, working on drone imagery segmentation with SAM 3, GraphRAG systems, and MCP tools. Former US Marine Corps Intelligence Officer with active TS/SCI clearance. UC Berkeley MIDS graduate.
 
-### ⚖️ Lawyer RAG Application
-Retrieval-Augmented Generation system for legal document analysis. React/TypeScript frontend with Firebase auth, AWS S3 document storage, and AI chatbot with multiple instruction modes for legal professionals.
+## Tech Stack
 
-### 🔒 ClearanceAI - DISS Management
-AI-powered security clearance management system for Defense Information System for Security (DISS). Features intelligent clearance recommendations, incident tracking, and multi-source CSV data integration.
+- **Framework:** React 18 with TypeScript
+- **Build Tool:** Vite
+- **UI Library:** Material-UI (MUI) v5
+- **Styling:** Emotion (CSS-in-JS)
+- **Routing:** React Router v6
+- **Deployment:** GitHub Pages via GitHub Actions
 
-### 📝 Resume Generator
-AI-powered resume generation using NLP and LLMs. Transforms raw career information into polished resumes through advanced prompt engineering and text ranking algorithms.
-- **Repo**: [resume_generator](https://github.com/kkuc100/resume_generator)
+## Project Structure
 
-### 🌍 GPS Converter (ECEF Velocity)
-Geospatial analysis tool computing Earth-Centered, Earth-Fixed (ECEF) velocities from LLA CSV data. Features vectorized NumPy operations and reproducible CLI interface.
-- **Repo**: [lla_ecef_coding_challenge](https://github.com/kkuc100/lla_ecef_coding_challenge)
+```
+├── public/              # Static assets (images, favicon, manifest)
+├── src/
+│   ├── components/      # Reusable components (Header, Footer)
+│   ├── pages/          # Page components (Home, About, Projects, Contact)
+│   ├── theme/          # MUI theme configuration
+│   ├── utils/          # Utility functions
+│   ├── App.tsx         # Main app component with routing
+│   └── main.tsx        # Application entry point
+├── index.html          # HTML template with SEO meta tags
+└── vite.config.ts      # Vite configuration
+```
 
-## 🛠️ Technical Skills
+## Features
 
-**Languages & Frameworks:**
-- Python, R, SQL, TypeScript, JavaScript, Java, Solidity
-- React, React Native, FastAPI, Flask
+- 🎨 Modern, responsive design optimized for all devices
+- 🌙 Custom dark theme with MUI
+- 🚀 Fast performance with Vite and code splitting
+- 📱 Mobile-first responsive layout
+- 🔍 SEO optimized with meta tags and structured data
+- ♿ Accessible components following WCAG guidelines
+- 📊 Project showcase with links to GitHub repositories
 
-**Machine Learning & AI:**
-- Deep Learning: PyTorch, TensorFlow, Keras, Hugging Face
-- Models: LSTM, BERT, Transformers, XGBoost, Neural Networks
-- NLP: Sentiment Analysis, Text Generation, RAG Systems
-- MLOps: AWS SageMaker, Model Deployment, Production ML
+## Local Development
 
-**Cloud & Infrastructure:**
-- AWS: SageMaker, Lambda, S3, API Gateway, Bedrock
-- Serverless Architectures, Docker, Terraform
+### Prerequisites
 
-**Data & Analytics:**
-- Data Analysis, Visualization, EDA
-- Database Management (MySQL, PostgreSQL)
+- Node.js 20.x or higher
+- npm (comes with Node.js)
 
-**Blockchain:**
-- Ethereum, Arbitrum, Smart Contracts, Web3
+### Installation
 
-## 📚 Education
+1. Clone the repository:
+```bash
+git clone https://github.com/kkuc100/kkuc100.github.io.git
+cd kkuc100.github.io
+```
 
-- **Master of Information and Data Science** - UC Berkeley
-- **Bachelor of Science in Mechanical Engineering** with Mathematics minor - University of Alabama
+2. Install dependencies:
+```bash
+npm install
+```
 
-## 🎯 Current Focus
+3. Start the development server:
+```bash
+npm run dev
+```
 
-Building production-ready ML systems, exploring cutting-edge NLP applications, and developing end-to-end data science solutions that drive measurable business impact.
+The site will be available at `http://localhost:5173` (default Vite port).
 
-## 📫 Connect With Me
+### Available Scripts
 
-- **Portfolio**: [kkuc100.github.io](https://kkuc100.github.io)
-- **Email**: kkuc234@gmail.com
-- **LinkedIn**: [kevinkuc](https://www.linkedin.com/in/kevinkuc)
-- **Location**: New York, NY
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build production bundle to `dist/`
+- `npm run lint` - Run ESLint to check code quality
+- `npm run preview` - Preview production build locally
 
-## 📊 GitHub Stats
+## Deployment
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=kkuc100&show_icons=true&theme=tokyonight&hide_border=true)
+The site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch. The deployment workflow:
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kkuc100&layout=compact&theme=tokyonight&hide_border=true)
+1. Runs on push to `main`
+2. Installs dependencies with `npm ci`
+3. Builds the production bundle with `npm run build`
+4. Deploys the `dist/` folder to the `gh-pages` branch
+
+The site is accessible at both [kevinkuc.com](https://kevinkuc.com) (custom domain) and [kkuc100.github.io](https://kkuc100.github.io).
+
+### Manual Deployment
+
+If you need to deploy manually:
+
+```bash
+npm run build
+# Then push the dist/ folder to gh-pages branch
+```
+
+## Custom Domain Configuration
+
+The custom domain `kevinkuc.com` is configured via:
+- DNS A records pointing to GitHub Pages IPs
+- CNAME file in `public/` directory
+- GitHub repository settings for custom domain
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 Kevin Kuc
+
+## Connect
+
+- **Portfolio:** [kevinkuc.com](https://kevinkuc.com)
+- **GitHub:** [@kkuc100](https://github.com/kkuc100)
+- **LinkedIn:** [linkedin.com/in/kevinkuc](https://linkedin.com/in/kevinkuc)
+- **Email:** kkuc234@gmail.com
+- **Location:** New York, NY
 
 ---
 
-💡 **Fun Fact**: I've built production ML models achieving 92%+ accuracy, deployed serverless architectures handling real-time predictions, and developed full-stack applications integrating blockchain technology.
-
-⭐️ **Thanks for visiting!** Feel free to explore my repositories and reach out if you'd like to collaborate on exciting data science projects.
-
+Built with ⚡ by Kevin Kuc
