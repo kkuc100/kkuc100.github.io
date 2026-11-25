@@ -47,15 +47,6 @@ const projects: Project[] = [
     ]
   },
   {
-    title: 'Resume Generator',
-    description:
-      'AI-powered resume generation using NLP and LLMs. Transforms raw career information into polished resumes through advanced prompt engineering, text ranking algorithms, and consistency validation.',
-    tags: ['Python', 'NLP', 'LLMs', 'Prompt Engineering'],
-    links: [
-      { label: 'View Code', href: 'https://github.com/kkuc100/resume_generator' }
-    ]
-  },
-  {
     title: 'GPS Converter (ECEF Velocity)',
     description:
       'Geospatial analysis tool computing Earth-Centered, Earth-Fixed (ECEF) velocities from LLA CSV data. Features vectorized NumPy operations, robust data parsing, and reproducible CLI interface for batch processing.',
