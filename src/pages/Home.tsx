@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Container, Typography, Grid, Card, CardContent, CardActions, Button, Stack } from '@mui/material'
-import { SmartToy, TrendingUp, Gavel, Psychology } from '@mui/icons-material'
+import { SmartToy, Gavel, Psychology } from '@mui/icons-material'
 import { alpha, useTheme } from '@mui/material/styles'
 import { Link as RouterLink } from 'react-router-dom'
 import { getImagePath } from '../utils/imageUtils'
@@ -16,12 +16,6 @@ const Home: React.FC = () => {
       title: 'RAGMint - Decentralized AI Platform',
       description: 'Full-stack decentralized AI platform with token-based payments on Arbitrum L2. Integrates multiple LLMs via AWS Bedrock, with React Native mobile apps, FastAPI backend, and Solidity smart contracts.',
       link: 'https://github.com/kkuc100/crypto_agent',
-    },
-    {
-      icon: <TrendingUp />,
-      title: 'Real Estate Market Analysis',
-      description: 'Production ML system predicting property days on market using XGBoost deployed on AWS SageMaker. Serverless architecture with React frontend, Lambda proxy, and real-time predictions via API Gateway.',
-      link: 'https://github.com/kkuc100/real_estate_analysis',
     },
     {
       icon: <Gavel />,
