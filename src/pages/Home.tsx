@@ -15,25 +15,25 @@ const Home: React.FC = () => {
       icon: <SmartToy />,
       title: 'RAGMint - Decentralized AI Platform',
       description: 'Full-stack decentralized AI platform with token-based payments on Arbitrum L2. Integrates multiple LLMs via AWS Bedrock, with React Native mobile apps, FastAPI backend, and Solidity smart contracts.',
-      link: '',
+      link: 'https://github.com/kkuc100/crypto_agent',
     },
     {
       icon: <TrendingUp />,
       title: 'Real Estate Market Analysis',
       description: 'Production ML system predicting property days on market using XGBoost deployed on AWS SageMaker. Serverless architecture with React frontend, Lambda proxy, and real-time predictions via API Gateway.',
-      link: '',
+      link: 'https://github.com/kkuc100/real_estate_analysis',
     },
     {
       icon: <Gavel />,
       title: 'Lawyer RAG Application',
       description: 'Retrieval-Augmented Generation system for legal document analysis. React/TypeScript frontend with Firebase auth, AWS S3 document storage, and AI chatbot with multiple instruction modes.',
-      link: '',
+      link: 'https://github.com/kkuc100/lawyer_rag',
     },
     {
       icon: <Psychology />,
       title: 'ClearanceAI - DISS Management',
       description: 'AI-powered security clearance management system with intelligent recommendations, incident tracking, and multi-source CSV data integration with UUID-based linking.',
-      link: '',
+      link: 'https://github.com/kkuc100/security_clearance',
     },
   ]
 
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
               fontSize: { xs: '30px', md: '48px' },
             }}
           >
-            Building Intelligent Systems with Data
+            Senior Applied Scientist | LLMs, RAG, Computer Vision
           </Typography>
           <Typography
             variant="h6"
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
               fontSize: { xs: '16px', md: '18px' },
             }}
           >
-            I’m Kevin, a senior data scientist focused on NLP, predictive modeling, and production ML. I turn raw data into deployable, measurable impact.
+            I'm Kevin, a Senior Applied Scientist at a stealth NYC startup building production ML systems. Specializing in LLMs, GraphRAG, geospatial computer vision with SAM 3, and MCP tools. Former USMC Intelligence Officer. Active TS/SCI clearance. UC Berkeley MIDS.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4, justifyContent: 'center' }}>
             <Button
