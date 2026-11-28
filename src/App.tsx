@@ -6,7 +6,6 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 
 const Projects = lazy(() => import('./pages/Projects'))
-const Contact = lazy(() => import('./pages/Contact'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 function ScrollToTop() {
@@ -35,7 +34,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<Navigate to="/#about" replace />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Navigate to="/#contact" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

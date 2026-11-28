@@ -1,9 +1,9 @@
 // Runs after `vite build`. GitHub Pages has no SPA fallback: a request for
 // /projects would get public/404.html with an HTTP 404 status, so search
 // engines would treat the page as missing. This script writes dist/projects.html,
-// dist/contact.html, etc. (GitHub Pages serves /projects from projects.html with
+// etc. (GitHub Pages serves /projects from projects.html with
 // a 200), each with its own title, description, canonical URL, and social tags.
-// It also writes dist/about.html, which redirects the old About URL to /#about.
+// It also writes redirect pages for /about and /contact (now home-page sections).
 import { readFile, writeFile } from 'node:fs/promises'
 
 const dist = new URL('../dist/', import.meta.url)
@@ -44,23 +44,31 @@ for (const [path, meta] of Object.entries(seo.pages)) {
   written.push(file)
 }
 
-await writeFile(
-  new URL('about.html', dist),
-  `<!doctype html>
+// Old pages that now live as sections: keep their URLs working by redirecting
+// to the section, and point search engines at the home page.
+const redirects = {
+  about: { title: 'About · Kevin Kuc', target: '/#about' },
+  contact: { title: 'Contact · Kevin Kuc', target: '/#contact' },
+}
+for (const [name, { title, target }] of Object.entries(redirects)) {
+  await writeFile(
+    new URL(`${name}.html`, dist),
+    `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>About · Kevin Kuc</title>
+    <title>${title}</title>
     <link rel="canonical" href="${seo.siteUrl}/" />
     <meta name="robots" content="noindex, follow" />
-    <meta http-equiv="refresh" content="0; url=/#about" />
+    <meta http-equiv="refresh" content="0; url=${target}" />
   </head>
   <body style="margin:0;background:#0a1120">
-    <a href="/#about" style="color:#e8eef7">About Kevin Kuc</a>
+    <a href="${target}" style="color:#e8eef7">${title}</a>
   </body>
 </html>
 `,
-)
-written.push('about.html (redirect)')
+  )
+  written.push(`${name}.html (redirect)`)
+}
 
 console.log(`prerender: wrote ${written.join(', ')}`)
