@@ -16,10 +16,25 @@ const Header: React.FC = () => {
   const navigationItems = [
     { label: 'Home', path: '/' },
     { label: 'Projects', path: '/projects' },
-    { label: 'Contact', path: '/contact' },
   ]
 
   const isActive = (path: string) => location.pathname === path
+
+  // "Contact" isn't a page: it scrolls to the footer's contact section on the
+  // current page. In the mobile drawer, wait for the drawer to finish closing
+  // (it locks page scrolling while open) before scrolling.
+  const goToContact = (event: React.MouseEvent) => {
+    event.preventDefault()
+    const scroll = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+    if (mobileOpen) {
+      setMobileOpen(false)
+      window.setTimeout(scroll, theme.transitions.duration.leavingScreen + 50)
+    } else {
+      scroll()
+    }
+  }
+
+  const contactTextSx = { fontWeight: 500, color: 'text.primary' }
 
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
@@ -52,6 +67,9 @@ const Header: React.FC = () => {
             />
           </ListItemButton>
         ))}
+        <ListItemButton component="a" href="#contact" onClick={goToContact} sx={{ justifyContent: 'center', py: 1.5 }}>
+          <ListItemText primary="Contact" primaryTypographyProps={{ sx: { textAlign: 'center', ...contactTextSx } }} />
+        </ListItemButton>
       </List>
     </Box>
   )
@@ -110,6 +128,19 @@ const Header: React.FC = () => {
                   {item.label}
                 </Typography>
               ))}
+              <Typography
+                component="a"
+                href="#contact"
+                onClick={goToContact}
+                sx={{
+                  ...contactTextSx,
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                  '&:hover': { color: 'secondary.light' },
+                }}
+              >
+                Contact
+              </Typography>
             </Box>
           )}
         </Toolbar>

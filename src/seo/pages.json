@@ -8,10 +8,6 @@
     "/projects": {
       "title": "Projects · Kevin Kuc",
       "description": "Projects by Kevin Kuc: RAGMint decentralized AI platform, a legal RAG application, ClearanceAI security-clearance tooling, and geospatial tools."
-    },
-    "/contact": {
-      "title": "Contact · Kevin Kuc",
-      "description": "Get in touch with Kevin Kuc, Senior Applied Scientist based in New York, NY."
     }
   },
   "notFound": {
