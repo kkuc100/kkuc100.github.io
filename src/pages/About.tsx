@@ -1,18 +1,19 @@
 import React from 'react'
 import { Container, Typography, Box, Grid, Paper } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
-import { alpha, useTheme } from '@mui/material/styles'
-import { getImagePath } from '../utils/imageUtils'
+import { useTheme } from '@mui/material/styles'
+import PageHeader from '../components/PageHeader'
+import { usePageMeta } from '../utils/usePageMeta'
 
 const About: React.FC = () => {
   const theme = useTheme()
-  const canadaImagePath = getImagePath('/img/canada.jpg')
+  usePageMeta('About', 'About Kevin Kuc: senior data scientist with a UC Berkeley MIDS degree, building production ML systems, NLP models, and full-stack AI applications.')
 
   const facts = [
     { number: 5, label: 'Clients' },
     { number: 37, label: 'Projects' },
     { number: 320, label: 'Project Hours Worked' },
-    { number: 27, label: 'Masters of Data Science Credits' },
+    { number: 27, label: "Master's in Data Science Credits" },
   ]
 
   const achievements = [
@@ -25,32 +26,17 @@ const About: React.FC = () => {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4, marginTop: '80px' }}>
-      {/* Breadcrumb */}
-      <Box
-        sx={{
-          mb: 4,
-          py: 4,
-          px: 3,
-          borderRadius: 2,
-          background: `linear-gradient(90deg, ${alpha(theme.palette.primary.main, 0.2)} 0%, ${alpha(theme.palette.secondary.main, 0.14)} 100%)`,
-          border: '1px solid',
-          borderColor: 'divider',
-        }}
-      >
-        <Typography variant="h4" gutterBottom sx={{ color: 'text.primary' }}>
-          About Me
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          Home / About Me
-        </Typography>
-      </Box>
+      <PageHeader title="About Me" />
 
       {/* About Section */}
       <Grid container spacing={4} sx={{ mb: 6 }}>
         <Grid item xs={12} md={6}>
           <Box
             component="img"
-            src={canadaImagePath}
+            src="/img/canada.jpg"
+            width={1200}
+            height={900}
+            decoding="async"
             alt="Kevin Kuc standing at a mountain overlook"
             sx={{
               width: '100%',

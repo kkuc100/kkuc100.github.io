@@ -23,9 +23,10 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box sx={{ textAlign: 'center' }}>
       <IconButton
         aria-label="close menu"
+        onClick={handleDrawerToggle}
         sx={{ position: 'absolute', right: 8, top: 8, color: 'text.primary' }}
       >
         <CloseIcon />
@@ -36,14 +37,18 @@ const Header: React.FC = () => {
             key={item.path}
             component={Link}
             to={item.path}
+            onClick={handleDrawerToggle}
+            aria-current={isActive(item.path) ? 'page' : undefined}
             sx={{ justifyContent: 'center', py: 1.5 }}
           >
             <ListItemText
               primary={item.label}
               primaryTypographyProps={{
-                textAlign: 'center',
-                fontWeight: isActive(item.path) ? 700 : 500,
-                color: isActive(item.path) ? 'primary.light' : 'text.primary',
+                sx: {
+                  textAlign: 'center',
+                  fontWeight: isActive(item.path) ? 700 : 500,
+                  color: isActive(item.path) ? 'primary.light' : 'text.primary',
+                },
               }}
             />
           </ListItemButton>
@@ -79,6 +84,7 @@ const Header: React.FC = () => {
             <IconButton
               color="inherit"
               aria-label="open menu"
+              aria-expanded={mobileOpen}
               edge="end"
               onClick={handleDrawerToggle}
             >
@@ -91,6 +97,7 @@ const Header: React.FC = () => {
                   key={item.path}
                   component={Link}
                   to={item.path}
+                  aria-current={isActive(item.path) ? 'page' : undefined}
                   sx={{
                     color: isActive(item.path) ? 'primary.light' : 'text.primary',
                     textDecoration: 'none',
