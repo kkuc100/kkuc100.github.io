@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://kkuc100.github.io/sitemap.xml
+Sitemap: https://kevinkuc.com/sitemap.xml
 
 # Disallow certain paths (if any)
 # Disallow: /admin/
