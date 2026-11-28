@@ -4,99 +4,107 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Primary Meta Tags -->
+    <!-- Primary meta tags. scripts/prerender-routes.mjs rewrites the
+         title, description, canonical, og:* and twitter:* values per page. -->
     <title>Kevin Kuc · Senior Applied Scientist</title>
-    <meta name="title" content="Kevin Kuc · Senior Applied Scientist" />
-    <meta name="description" content="Kevin Kuc's digital portfolio showcasing expertise in data science, machine learning, and AI innovation. Master's in Data Science from UC Berkeley. Explore AI projects, resume generation, GPS conversion, and cutting-edge solutions." />
+    <meta name="description" content="Kevin Kuc, Senior Applied Scientist in New York. LLMs, deep learning, and production ML. UC Berkeley MIDS. Background, projects, and contact." />
     <meta name="author" content="Kevin Kuc" />
     <meta name="robots" content="index, follow" />
-    
-    <!-- Open Graph / Facebook -->
+    <link rel="canonical" href="https://kkuc100.github.io/" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kkuc100.github.io/" />
     <meta property="og:title" content="Kevin Kuc · Senior Applied Scientist" />
-    <meta property="og:description" content="Kevin Kuc's digital portfolio showcasing expertise in data science, machine learning, and AI innovation. Master's in Data Science from UC Berkeley. Explore AI projects, resume generation, GPS conversion, and cutting-edge solutions." />
+    <meta property="og:description" content="Kevin Kuc, Senior Applied Scientist in New York. LLMs, deep learning, and production ML. UC Berkeley MIDS. Background, projects, and contact." />
     <meta property="og:image" content="https://kkuc100.github.io/img/resume_pic.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Kevin Kuc Portfolio" />
+    <meta property="og:image:alt" content="Kevin Kuc" />
+    <meta property="og:site_name" content="Kevin Kuc" />
     <meta property="og:locale" content="en_US" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://kkuc100.github.io/" />
-    <meta property="twitter:title" content="Kevin Kuc · Senior Applied Scientist" />
-    <meta property="twitter:description" content="Kevin Kuc's digital portfolio showcasing expertise in data science, machine learning, and AI innovation. Master's in Data Science from UC Berkeley. Explore AI projects, resume generation, GPS conversion, and cutting-edge solutions." />
-    <meta property="twitter:image" content="https://kkuc100.github.io/img/resume_pic.jpg" />
-    
-    <!-- Additional SEO Meta Tags -->
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kevin Kuc · Senior Applied Scientist" />
+    <meta name="twitter:description" content="Kevin Kuc, Senior Applied Scientist in New York. LLMs, deep learning, and production ML. UC Berkeley MIDS. Background, projects, and contact." />
+    <meta name="twitter:image" content="https://kkuc100.github.io/img/resume_pic.jpg" />
+
+    <!-- App and browser chrome -->
     <meta name="theme-color" content="#121410" />
-    <meta name="msapplication-TileColor" content="#121410" />
-    <meta name="msapplication-TileImage" content="/img/favicon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Kevin Kuc Portfolio" />
-    
-    <!-- Favicon and Icons -->
+    <meta name="apple-mobile-web-app-title" content="Kevin Kuc" />
     <link rel="icon" type="image/png" href="/img/favicon.png" />
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-    <link rel="canonical" href="https://kkuc100.github.io/" />
     <link rel="manifest" href="/manifest.json" />
-    
-    <!-- Preconnect for Performance -->
+
+    <!-- Home hero image (removed from other pages' HTML at build time) -->
+    <link rel="preload" as="image" href="/img/hero-bg.webp" type="image/webp" fetchpriority="high" data-home-only />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Kevin Kuc",
-      "url": "https://kkuc100.github.io",
-      "image": "https://kkuc100.github.io/img/resume_pic.jpg",
-      "description": "Senior Applied Scientist working on LLMs, deep learning, and production ML. Master's in Data Science from UC Berkeley.",
-      "jobTitle": "Senior Applied Scientist",
-      "alumniOf": [
+      "@graph": [
         {
-          "@type": "EducationalOrganization",
-          "name": "University of California, Berkeley",
-          "description": "Master of Information and Data Science"
+          "@type": "WebSite",
+          "@id": "https://kkuc100.github.io/#website",
+          "url": "https://kkuc100.github.io/",
+          "name": "Kevin Kuc",
+          "publisher": { "@id": "https://kkuc100.github.io/#person" }
         },
         {
-          "@type": "EducationalOrganization", 
-          "name": "University of Alabama",
-          "description": "Bachelor of Science in Mechanical Engineering with Mathematics minor"
+          "@type": "Person",
+          "@id": "https://kkuc100.github.io/#person",
+          "name": "Kevin Kuc",
+          "url": "https://kkuc100.github.io/",
+          "image": "https://kkuc100.github.io/img/resume_pic.jpg",
+          "jobTitle": "Senior Applied Scientist",
+          "description": "Senior Applied Scientist working on LLMs, deep learning, and production ML. Master's in Data Science from UC Berkeley.",
+          "alumniOf": [
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "University of California, Berkeley"
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Alabama"
+            }
+          ],
+          "knowsAbout": [
+            "Large Language Models",
+            "Generative AI",
+            "Retrieval-Augmented Generation",
+            "Deep Learning",
+            "Machine Learning",
+            "MLOps",
+            "Natural Language Processing",
+            "Python",
+            "PyTorch",
+            "TensorFlow",
+            "SQL",
+            "AWS"
+          ],
+          "sameAs": [
+            "https://github.com/kkuc100",
+            "https://www.linkedin.com/in/kevinkuc"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New York",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          },
+          "email": "mailto:kkuc234@gmail.com"
         }
-      ],
-      "knowsAbout": [
-        "Data Science",
-        "Machine Learning", 
-        "Artificial Intelligence",
-        "Python",
-        "R",
-        "SQL",
-        "TensorFlow",
-        "PyTorch",
-        "Natural Language Processing",
-        "Deep Learning",
-        "Data Analysis",
-        "Data Visualization"
-      ],
-      "sameAs": [
-        "https://github.com/kkuc100",
-        "https://www.linkedin.com/in/kevinkuc"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New York",
-        "addressRegion": "NY",
-        "addressCountry": "US"
-      },
-      "email": "kkuc234@gmail.com"
+      ]
     }
     </script>
   </head>

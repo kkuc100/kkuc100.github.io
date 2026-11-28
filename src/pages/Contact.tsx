@@ -5,7 +5,7 @@ import PageHeader from '../components/PageHeader'
 import { usePageMeta } from '../utils/usePageMeta'
 
 const Contact: React.FC = () => {
-  usePageMeta('Contact', 'Get in touch with Kevin Kuc, senior applied scientist based in New York, NY.')
+  usePageMeta('/contact')
 
   return (
     <Container maxWidth="lg" sx={{ py: 4, marginTop: '80px' }}>
@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
               <Card sx={{ textAlign: 'center', p: 2 }}>
                 <CardContent>
                   <LocationOn sx={{ fontSize: 32, color: 'primary.main', mb: 1 }} />
-                  <Typography variant="h6" gutterBottom>
+                  <Typography variant="h6" component="h2" gutterBottom>
                     My Address
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
               <Card sx={{ textAlign: 'center', p: 2 }}>
                 <CardContent>
                   <Email sx={{ fontSize: 32, color: 'primary.main', mb: 1 }} />
-                  <Typography variant="h6" gutterBottom>
+                  <Typography variant="h6" component="h2" gutterBottom>
                     Email Me
                   </Typography>
                   <Typography

@@ -38,7 +38,7 @@ const theme = createTheme({
     divider: line,
   },
   typography: {
-    fontFamily: 'Inter, "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+    fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
     h1: {
       fontWeight: 800,
       fontSize: '48px',
