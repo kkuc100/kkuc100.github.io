@@ -13,6 +13,15 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: 'Yelp Sentiment Ensemble',
+    description:
+      'Review sentiment classification combining RoBERTa and DeBERTa softmax outputs with stacked ensembles. 79% macro F1 on 3-class and 62% on 5-class, beating a Naive Bayes baseline by 11 and 15 points. UC Berkeley MIDS project with an ACL-style paper.',
+    tags: ['NLP', 'Transformers', 'RoBERTa', 'DeBERTa', 'Ensembles', 'PyTorch'],
+    links: [
+      { label: 'View Code', href: 'https://github.com/kkuc100/Yelp-Sentiment-Analysis' }
+    ]
+  },
+  {
     title: 'RAGMint - Decentralized AI Platform',
     description:
       'Full-stack decentralized AI platform with token-based payments on Arbitrum L2. Integrates multiple LLMs (Llama 3, Claude 3.5 Sonnet, Amazon Nova) via AWS Bedrock, with React Native mobile apps, FastAPI backend, and Solidity smart contracts.',

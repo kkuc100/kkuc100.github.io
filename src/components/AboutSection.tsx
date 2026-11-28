@@ -57,7 +57,7 @@ const AboutSection: React.FC = () => {
             About Me
           </Typography>
           <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.7 }}>
-            I'm a Senior Applied Scientist specializing in LLMs, RAG systems, and geospatial computer vision. Currently building production ML at a stealth NYC startup. Former US Marine Corps Intelligence Officer with active TS/SCI clearance. I bring technical depth, operational discipline, and a track record of deploying ML systems that solve real-world problems.
+            I'm a Senior Applied Scientist who leads teams that take LLM, GraphRAG, and computer vision systems from prototype to production, often in air-gapped, regulated, or classified environments. Former US Marine Corps Intelligence Officer (Captain) with an active TS/SCI clearance. I'm looking for a Staff or Principal role where I own technical direction across teams, not just a single model.
           </Typography>
           <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
             {achievements.map((achievement) => (
