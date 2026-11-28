@@ -1,0 +1,20 @@
+{
+  "siteUrl": "https://kevinkuc.com",
+  "pages": {
+    "/": {
+      "title": "Kevin Kuc · Senior Applied Scientist | LLMs, RAG, Computer Vision",
+      "description": "Kevin Kuc, Senior Applied Scientist in NYC: LLMs, RAG, and geospatial computer vision. Former USMC Intelligence Officer, active TS/SCI. UC Berkeley MIDS."
+    },
+    "/projects": {
+      "title": "Projects · Kevin Kuc",
+      "description": "Projects by Kevin Kuc: RAGMint decentralized AI platform, a legal RAG application, ClearanceAI security-clearance tooling, and geospatial tools."
+    },
+    "/contact": {
+      "title": "Contact · Kevin Kuc",
+      "description": "Get in touch with Kevin Kuc, Senior Applied Scientist based in New York, NY."
+    }
+  },
+  "notFound": {
+    "title": "Page not found · Kevin Kuc"
+  }
+}

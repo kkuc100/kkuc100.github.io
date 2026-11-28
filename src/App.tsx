@@ -1,19 +1,25 @@
-import { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Suspense, lazy, useEffect } from 'react'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { Box } from '@mui/material'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Projects from './pages/Projects'
+
+const Projects = lazy(() => import('./pages/Projects'))
+const Contact = lazy(() => import('./pages/Contact'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    const target = hash ? document.getElementById(hash.slice(1)) : null
+    if (target) {
+      target.scrollIntoView()
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname, hash])
 
   return null
 }
@@ -24,12 +30,15 @@ function App() {
       <ScrollToTop />
       <Header />
       <Box component="main" sx={{ flexGrow: 1 }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Suspense fallback={<Box sx={{ minHeight: '100vh' }} />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<Navigate to="/#about" replace />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </Box>
       <Footer />
     </Box>

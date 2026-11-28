@@ -1,44 +1,44 @@
 import { alpha, createTheme } from '@mui/material/styles'
 
-const ink = '#121410'
-const paper = '#1c211e'
-const copper = '#e0a15a'
-const copperLight = '#f2c891'
-const copperDark = '#b87a2e'
-const sage = '#5eae98'
-const sageLight = '#9ed9c8'
-const sageDark = '#3a8774'
-const cream = '#f6f1e8'
-const mist = '#c4bfb4'
-const line = 'rgba(232, 214, 186, 0.16)'
+const ink = '#0a1120'
+const paper = '#121b2e'
+const blue = '#5aa8ff'
+const blueLight = '#9ccbff'
+const blueDark = '#2f7fe0'
+const teal = '#2dd4bf'
+const tealLight = '#7eeadb'
+const tealDark = '#14a394'
+const snow = '#e8eef7'
+const slate = '#a5b1c4'
+const line = 'rgba(148, 170, 210, 0.18)'
 
 const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: copper,
-      light: copperLight,
-      dark: copperDark,
-      contrastText: '#1c140c',
+      main: blue,
+      light: blueLight,
+      dark: blueDark,
+      contrastText: '#06101f',
     },
     secondary: {
-      main: sage,
-      light: sageLight,
-      dark: sageDark,
-      contrastText: '#10211c',
+      main: teal,
+      light: tealLight,
+      dark: tealDark,
+      contrastText: '#04201c',
     },
     background: {
       default: ink,
       paper,
     },
     text: {
-      primary: cream,
-      secondary: mist,
+      primary: snow,
+      secondary: slate,
     },
     divider: line,
   },
   typography: {
-    fontFamily: 'Inter, "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+    fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
     h1: {
       fontWeight: 800,
       fontSize: '48px',
@@ -71,7 +71,7 @@ const theme = createTheme({
       styleOverrides: {
         body: {
           backgroundColor: ink,
-          color: cream,
+          color: snow,
         },
       },
     },
@@ -81,7 +81,7 @@ const theme = createTheme({
           backgroundColor: alpha(ink, 0.9),
           backgroundImage: 'none',
           backdropFilter: 'blur(14px)',
-          boxShadow: `0 1px 0 0 ${alpha(copper, 0.4)}`,
+          boxShadow: `0 1px 0 0 ${alpha(blue, 0.4)}`,
         },
       },
     },
@@ -94,10 +94,10 @@ const theme = createTheme({
           padding: '10px 18px',
         },
         outlined: {
-          borderColor: alpha(copper, 0.55),
+          borderColor: alpha(blue, 0.55),
           '&:hover': {
-            borderColor: copper,
-            backgroundColor: alpha(copper, 0.1),
+            borderColor: blue,
+            backgroundColor: alpha(blue, 0.1),
           },
         },
       },
@@ -125,7 +125,7 @@ const theme = createTheme({
       styleOverrides: {
         paper: {
           backgroundColor: paper,
-          color: cream,
+          color: snow,
         },
       },
     },
