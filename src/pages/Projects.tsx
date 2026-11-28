@@ -17,27 +17,24 @@ const projects: Project[] = [
     description:
       'Full-stack decentralized AI platform with token-based payments on Arbitrum L2. Integrates multiple LLMs (Llama 3, Claude 3.5 Sonnet, Amazon Nova) via AWS Bedrock, with React Native mobile apps, FastAPI backend, and Solidity smart contracts.',
     tags: ['Blockchain', 'LLMs', 'React Native', 'FastAPI', 'Solidity', 'AWS Bedrock', 'Arbitrum'],
-    links: [
-      { label: 'View Code', href: 'https://github.com/kkuc100/crypto_agent' }
-    ]
+    // Private repo (github.com/kkuc100/crypto_agent); no public link.
+    links: []
   },
   {
     title: 'Lawyer RAG Application',
     description:
       'Retrieval-Augmented Generation system for legal document analysis. React/TypeScript frontend with Firebase auth, AWS S3 document storage, and AI chatbot with multiple instruction modes (Research, Client Communication, Paralegal Support). Role-based access control.',
     tags: ['RAG', 'React', 'Firebase', 'AWS S3', 'NLP', 'TypeScript', 'Redux'],
-    links: [
-      { label: 'View Code', href: 'https://github.com/kkuc100/lawyer_rag' }
-    ]
+    // Private repo (github.com/kkuc100/lawyer_rag); no public link.
+    links: []
   },
   {
     title: 'ClearanceAI - DISS Management',
     description:
       'AI-powered security clearance management system for Defense Information System for Security (DISS). Features intelligent clearance recommendations, incident tracking, investigation deadline calculations, and multi-source CSV data integration with UUID-based linking.',
     tags: ['React', 'TypeScript', 'AI Recommendations', 'Data Integration', 'Security'],
-    links: [
-      { label: 'View Code', href: 'https://github.com/kkuc100/security_clearance' }
-    ]
+    // Private repo (github.com/kkuc100/security_clearance); no public link.
+    links: []
   },
   {
     title: 'GPS Converter (ECEF Velocity)',
