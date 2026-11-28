@@ -1,6 +1,8 @@
 import React from 'react'
 import { Container, Typography, Box, Grid, Card, CardContent, CardActions, Button, Chip, Stack } from '@mui/material'
 import { alpha, useTheme } from '@mui/material/styles'
+import PageHeader from '../components/PageHeader'
+import { usePageMeta } from '../utils/usePageMeta'
 
 type Project = {
   title: string
@@ -67,31 +69,18 @@ const projects: Project[] = [
 
 const Projects: React.FC = () => {
   const theme = useTheme()
+  usePageMeta('Projects', 'Projects by Kevin Kuc: RAG applications, production ML on AWS SageMaker, decentralized AI, NLP resume generation, and geospatial tools.')
 
   return (
     <Container maxWidth="lg" sx={{ py: 4, marginTop: '80px' }}>
-      <Box
-        sx={{
-          mb: 4,
-          py: 4,
-          px: 3,
-          borderRadius: 2,
-          background: `linear-gradient(90deg, ${alpha(theme.palette.primary.main, 0.2)} 0%, ${alpha(theme.palette.secondary.main, 0.14)} 100%)`,
-          border: '1px solid',
-          borderColor: 'divider',
-        }}
-      >
-        <Typography variant="h4" gutterBottom sx={{ color: 'text.primary' }}>
-          Projects
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          Problem → Approach → Results, with links to code and demos
-        </Typography>
-      </Box>
+      <PageHeader
+        title="Projects"
+        subtitle="Selected work in ML, NLP, and full-stack AI. Public repos are linked; client work is private."
+      />
 
       <Grid container spacing={4}>
-        {projects.map((project, idx) => (
-          <Grid item xs={12} sm={6} md={4} key={idx}>
+        {projects.map((project) => (
+          <Grid item xs={12} sm={6} md={4} key={project.title}>
             <Card
               sx={{
                 height: '100%',
@@ -144,30 +133,32 @@ const Projects: React.FC = () => {
                   ))}
                 </Stack>
               </CardContent>
-              <CardActions sx={{ px: 2, pb: 2 }}>
-                <Stack direction="row" spacing={1}>
-                  {project.links.map((l) => (
-                    <Button
-                      key={l.href}
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="outlined"
-                      size="small"
-                      sx={{
-                        borderColor: 'primary.main',
-                        color: 'primary.light',
-                        '&:hover': {
-                          borderColor: 'primary.light',
-                          backgroundColor: alpha(theme.palette.primary.main, 0.12),
-                        }
-                      }}
-                    >
-                      {l.label}
-                    </Button>
-                  ))}
-                </Stack>
-              </CardActions>
+              {project.links.length > 0 && (
+                <CardActions sx={{ px: 2, pb: 2 }}>
+                  <Stack direction="row" spacing={1}>
+                    {project.links.map((l) => (
+                      <Button
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        variant="outlined"
+                        size="small"
+                        sx={{
+                          borderColor: 'primary.main',
+                          color: 'primary.light',
+                          '&:hover': {
+                            borderColor: 'primary.light',
+                            backgroundColor: alpha(theme.palette.primary.main, 0.12),
+                          }
+                        }}
+                      >
+                        {l.label}
+                      </Button>
+                    ))}
+                  </Stack>
+                </CardActions>
+              )}
             </Card>
           </Grid>
         ))}
