@@ -37,14 +37,14 @@ public/                 Copied as-is into the build
   manifest.json, robots.txt, sitemap.xml
 src/
   main.tsx              Entry: router + MUI theme
-  App.tsx               Routes (Projects, Contact, and the 404 page load on demand)
+  App.tsx               Routes (Projects and the 404 page load on demand)
   seo/pages.json        Title and description for each page
   theme/theme.ts        Colors, typography, component overrides
-  components/           Header, Footer, PageHeader, AboutSection (shown on Home)
-  pages/                Home, Projects, Contact, NotFound
+  components/           Header, Footer (also the contact section), PageHeader, AboutSection (shown on Home)
+  pages/                Home, Projects, NotFound
   utils/usePageMeta.ts  Updates title, description, canonical, and social tags on navigation
 scripts/
-  prerender-routes.mjs  Post-build: writes projects.html, contact.html, about.html
+  prerender-routes.mjs  Post-build: writes projects.html, plus about.html and contact.html redirects
   make-icons.py         Regenerates favicon and app icons from the theme colors
 ```
 
@@ -52,8 +52,8 @@ scripts/
 
 GitHub Pages has no fallback for single-page apps. Without help, a visit to `/projects` would get `404.html` with an HTTP 404 status, and search engines would treat the page as missing.
 
-- `scripts/prerender-routes.mjs` runs after the Vite build and writes `projects.html` and `contact.html`. GitHub Pages serves `/projects` from `projects.html` with a 200 status. Each file has its own title, description, canonical URL, and social tags from `src/seo/pages.json`.
-- `about.html` redirects the old `/about` URL to the About section on the home page (`/#about`).
+- `scripts/prerender-routes.mjs` runs after the Vite build and writes `projects.html`. GitHub Pages serves `/projects` from `projects.html` with a 200 status. Each file has its own title, description, canonical URL, and social tags from `src/seo/pages.json`.
+- `about.html` and `contact.html` redirect the old `/about` and `/contact` URLs to the About section on the home page (`/#about`) and the contact details in the footer (`/#contact`).
 - Any other path hits `public/404.html`, which redirects to `/?/path`. A script in `index.html` restores the path, and the app shows its Not Found page (marked `noindex`).
 
 ## Common edits
