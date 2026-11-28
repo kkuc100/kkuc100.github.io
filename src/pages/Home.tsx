@@ -68,7 +68,7 @@ const Home: React.FC = () => {
               fontSize: { xs: '16px', md: '18px' },
             }}
           >
-            I’m Kevin, a senior data scientist focused on NLP, predictive modeling, and production ML. I turn raw data into deployable, measurable impact.
+            I’m Kevin, a senior applied scientist focused on NLP, predictive modeling, and production ML. I turn raw data into deployable, measurable impact.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4, justifyContent: 'center' }}>
             <Button

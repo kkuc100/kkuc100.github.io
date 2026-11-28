@@ -1,80 +1,48 @@
-# Kevin Kuc - Senior Data Scientist 👋
+# kkuc100.github.io
 
-Welcome to my GitHub profile! I'm a senior data scientist building production ML systems and AI applications, specializing in NLP, predictive modeling, and full-stack development.
+Source for [kkuc100.github.io](https://kkuc100.github.io), Kevin Kuc's portfolio site.
 
-## 🚀 Featured Projects
+Built with React 18, TypeScript, Vite, Material UI, and React Router. Hosted on GitHub Pages.
 
-### 🌐 [Portfolio Website](https://kkuc100.github.io)
-Modern portfolio website showcasing my projects and expertise. Built with React, TypeScript, and Material-UI.
+## Development
 
-### 🤖 RAGMint - Decentralized AI Platform
-Full-stack decentralized AI platform with token-based payments on Arbitrum L2. Integrates multiple LLMs (Llama 3, Claude 3.5 Sonnet, Amazon Nova) via AWS Bedrock, with React Native mobile apps, FastAPI backend, and Solidity smart contracts.
+Requires Node 20+.
 
-### 📊 Real Estate Market Analysis
-Production ML system predicting property days on market using XGBoost deployed on AWS SageMaker. Serverless architecture with React frontend, Lambda proxy, and real-time predictions via API Gateway. Handles multi-source data integration from Zillow and Realtor.com APIs.
+```bash
+npm install
+npm run dev       # local dev server at http://localhost:5173
+npm run lint
+npm run build     # type-checks, then builds to dist/
+npm run preview   # serves the built dist/ locally
+```
 
-### ⚖️ Lawyer RAG Application
-Retrieval-Augmented Generation system for legal document analysis. React/TypeScript frontend with Firebase auth, AWS S3 document storage, and AI chatbot with multiple instruction modes for legal professionals.
+## Deployment
 
-### 🔒 ClearanceAI - DISS Management
-AI-powered security clearance management system for Defense Information System for Security (DISS). Features intelligent clearance recommendations, incident tracking, and multi-source CSV data integration.
+Pushing to `main` runs [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the site and publishes `dist/` to GitHub Pages. Other branches (such as `dev`) are not deployed.
 
-### 📝 Resume Generator
-AI-powered resume generation using NLP and LLMs. Transforms raw career information into polished resumes through advanced prompt engineering and text ranking algorithms.
-- **Repo**: [resume_generator](https://github.com/kkuc100/resume_generator)
+## Project layout
 
-### 🌍 GPS Converter (ECEF Velocity)
-Geospatial analysis tool computing Earth-Centered, Earth-Fixed (ECEF) velocities from LLA CSV data. Features vectorized NumPy operations and reproducible CLI interface.
-- **Repo**: [lla_ecef_coding_challenge](https://github.com/kkuc100/lla_ecef_coding_challenge)
+```
+index.html              Page shell, SEO meta tags, JSON-LD structured data
+public/                 Copied as-is into the build
+  404.html              GitHub Pages SPA fallback (see below)
+  img/                  Images and app icons
+  manifest.json, robots.txt, sitemap.xml
+src/
+  main.tsx              Entry: router + MUI theme
+  App.tsx               Routes (About, Projects, Contact, and the 404 page load on demand)
+  theme/theme.ts        Colors, typography, component overrides
+  components/           Header, Footer, PageHeader
+  pages/                Home, About, Projects, Contact, NotFound
+  utils/usePageMeta.ts  Sets the per-page <title> and meta description
+```
 
-## 🛠️ Technical Skills
+## Client-side routing on GitHub Pages
 
-**Languages & Frameworks:**
-- Python, R, SQL, TypeScript, JavaScript, Java, Solidity
-- React, React Native, FastAPI, Flask
+GitHub Pages has no fallback for single-page apps, so a direct visit to `/about` would 404. `public/404.html` catches that and redirects to `/?/about`. A small script in `index.html` then restores `/about` in the address bar before React Router starts. Unknown paths end up on the in-app Not Found page.
 
-**Machine Learning & AI:**
-- Deep Learning: PyTorch, TensorFlow, Keras, Hugging Face
-- Models: LSTM, BERT, Transformers, XGBoost, Neural Networks
-- NLP: Sentiment Analysis, Text Generation, RAG Systems
-- MLOps: AWS SageMaker, Model Deployment, Production ML
+## Common edits
 
-**Cloud & Infrastructure:**
-- AWS: SageMaker, Lambda, S3, API Gateway, Bedrock
-- Serverless Architectures, Docker, Terraform
-
-**Data & Analytics:**
-- Data Analysis, Visualization, EDA
-- Database Management (MySQL, PostgreSQL)
-
-**Blockchain:**
-- Ethereum, Arbitrum, Smart Contracts, Web3
-
-## 📚 Education
-
-- **Master of Information and Data Science** - UC Berkeley
-- **Bachelor of Science in Mechanical Engineering** with Mathematics minor - University of Alabama
-
-## 🎯 Current Focus
-
-Building production-ready ML systems, exploring cutting-edge NLP applications, and developing end-to-end data science solutions that drive measurable business impact.
-
-## 📫 Connect With Me
-
-- **Portfolio**: [kkuc100.github.io](https://kkuc100.github.io)
-- **Email**: kkuc234@gmail.com
-- **LinkedIn**: [kevinkuc](https://www.linkedin.com/in/kevinkuc)
-- **Location**: New York, NY
-
-## 📊 GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=kkuc100&show_icons=true&theme=tokyonight&hide_border=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kkuc100&layout=compact&theme=tokyonight&hide_border=true)
-
----
-
-💡 **Fun Fact**: I've built production ML models achieving 92%+ accuracy, deployed serverless architectures handling real-time predictions, and developed full-stack applications integrating blockchain technology.
-
-⭐️ **Thanks for visiting!** Feel free to explore my repositories and reach out if you'd like to collaborate on exciting data science projects.
-
+- **Projects:** edit the `projects` array in `src/pages/Projects.tsx`. Featured cards on the home page are in `src/pages/Home.tsx`.
+- **New page:** add a component in `src/pages/`, a `<Route>` in `src/App.tsx`, a link in `Header.tsx` and `Footer.tsx`, and a URL in `public/sitemap.xml`.
+- **Images:** put files in `public/img/` and reference them as `/img/name.jpg`. Everything in `public/` ships with the site, so delete images you stop using.

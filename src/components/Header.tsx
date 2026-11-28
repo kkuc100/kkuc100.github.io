@@ -75,7 +75,7 @@ const Header: React.FC = () => {
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
               Kevin Kuc
               <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' }, color: 'primary.light' }}>
-                {' · Senior Data Scientist'}
+                {' · Senior Applied Scientist'}
               </Box>
             </Link>
           </Typography>

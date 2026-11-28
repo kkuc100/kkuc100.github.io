@@ -7,7 +7,7 @@ import { usePageMeta } from '../utils/usePageMeta'
 
 const About: React.FC = () => {
   const theme = useTheme()
-  usePageMeta('About', 'About Kevin Kuc: senior data scientist with a UC Berkeley MIDS degree, building production ML systems, NLP models, and full-stack AI applications.')
+  usePageMeta('About', 'About Kevin Kuc: senior applied scientist with a UC Berkeley MIDS degree, building production ML systems, NLP models, and full-stack AI applications.')
 
   const facts = [
     { number: 5, label: 'Clients' },
@@ -53,7 +53,7 @@ const About: React.FC = () => {
             About Me
           </Typography>
           <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.7 }}>
-            I'm a senior data scientist building production ML systems and AI applications. My background spans machine learning, NLP, and full-stack development, with experience deploying models to production and creating end-to-end data science solutions.
+            I'm a senior applied scientist building production ML systems and AI applications. My background spans machine learning, NLP, and full-stack development, with experience deploying models to production and creating end-to-end data science solutions.
           </Typography>
           <Box>
             {achievements.map((achievement, index) => (
