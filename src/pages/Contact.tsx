@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container, Typography, Grid, Paper, Card, CardContent } from '@mui/material'
-import { LocationOn, Email, Phone } from '@mui/icons-material'
+import { LocationOn, Email } from '@mui/icons-material'
 import PageHeader from '../components/PageHeader'
 import { usePageMeta } from '../utils/usePageMeta'
 
 const Contact: React.FC = () => {
-  usePageMeta('Contact', 'Get in touch with Kevin Kuc, senior data scientist based in New York, NY.')
+  usePageMeta('Contact', 'Get in touch with Kevin Kuc, senior applied scientist based in New York, NY.')
 
   return (
     <Container maxWidth="lg" sx={{ py: 4, marginTop: '80px' }}>
@@ -28,8 +28,8 @@ const Contact: React.FC = () => {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <Card sx={{ textAlign: 'center', p: 2, height: '100%' }}>
+            <Grid item xs={12}>
+              <Card sx={{ textAlign: 'center', p: 2 }}>
                 <CardContent>
                   <Email sx={{ fontSize: 32, color: 'primary.main', mb: 1 }} />
                   <Typography variant="h6" gutterBottom>
@@ -43,25 +43,6 @@ const Contact: React.FC = () => {
                     sx={{ textDecoration: 'none', '&:hover': { color: 'primary.light' } }}
                   >
                     kkuc234@gmail.com
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Card sx={{ textAlign: 'center', p: 2, height: '100%' }}>
-                <CardContent>
-                  <Phone sx={{ fontSize: 32, color: 'primary.main', mb: 1 }} />
-                  <Typography variant="h6" gutterBottom>
-                    Phone
-                  </Typography>
-                  <Typography
-                    component="a"
-                    href="tel:+19085818869"
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ textDecoration: 'none', '&:hover': { color: 'primary.light' } }}
-                  >
-                    +1 908 581 8869
                   </Typography>
                 </CardContent>
               </Card>

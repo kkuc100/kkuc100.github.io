@@ -1,5 +1,5 @@
 {
-  "name": "Kevin Kuc - Data Scientist & AI Engineer Portfolio",
+  "name": "Kevin Kuc - Senior Applied Scientist Portfolio",
   "short_name": "Kevin Kuc Portfolio",
   "description": "Kevin Kuc's digital portfolio showcasing expertise in data science, machine learning, and AI innovation. Master's in Data Science from UC Berkeley.",
   "start_url": "/",
@@ -13,6 +13,18 @@
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/img/apple-touch-icon.png",
