@@ -55,8 +55,8 @@ await writeFile(
     <meta name="robots" content="noindex, follow" />
     <meta http-equiv="refresh" content="0; url=/#about" />
   </head>
-  <body style="margin:0;background:#121410">
-    <a href="/#about" style="color:#f6f1e8">About Kevin Kuc</a>
+  <body style="margin:0;background:#0a1120">
+    <a href="/#about" style="color:#e8eef7">About Kevin Kuc</a>
   </body>
 </html>
 `,
