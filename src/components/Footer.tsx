@@ -23,15 +23,12 @@ const Footer: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" sx={{ mb: 2, color: 'primary.light' }}>
+            <Typography variant="h6" component="p" sx={{ mb: 2, color: 'primary.light' }}>
               Useful Links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
               <Link component={RouterLink} to="/" color="inherit" sx={linkSx}>
                 Home
-              </Link>
-              <Link component={RouterLink} to="/about" color="inherit" sx={linkSx}>
-                About
               </Link>
               <Link component={RouterLink} to="/projects" color="inherit" sx={linkSx}>
                 Projects
@@ -43,7 +40,7 @@ const Footer: React.FC = () => {
           </Grid>
 
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" sx={{ mb: 2, color: 'primary.light' }}>
+            <Typography variant="h6" component="p" sx={{ mb: 2, color: 'primary.light' }}>
               Contact
             </Typography>
             <Typography variant="body2" sx={{ mb: 1, color: 'text.secondary' }}>

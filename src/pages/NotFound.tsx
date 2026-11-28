@@ -5,7 +5,7 @@ import PageHeader from '../components/PageHeader'
 import { usePageMeta } from '../utils/usePageMeta'
 
 const NotFound: React.FC = () => {
-  usePageMeta('Page not found')
+  usePageMeta(null)
 
   return (
     <Container maxWidth="lg" sx={{ py: 4, marginTop: '80px' }}>

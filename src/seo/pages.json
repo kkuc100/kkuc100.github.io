@@ -1,0 +1,20 @@
+{
+  "siteUrl": "https://kkuc100.github.io",
+  "pages": {
+    "/": {
+      "title": "Kevin Kuc · Senior Applied Scientist",
+      "description": "Kevin Kuc, Senior Applied Scientist in New York. LLMs, deep learning, and production ML. UC Berkeley MIDS. Background, projects, and contact."
+    },
+    "/projects": {
+      "title": "Projects · Kevin Kuc",
+      "description": "Projects by Kevin Kuc: RAG applications, production ML on AWS SageMaker, decentralized AI, LLM-based resume generation, and geospatial tools."
+    },
+    "/contact": {
+      "title": "Contact · Kevin Kuc",
+      "description": "Get in touch with Kevin Kuc, Senior Applied Scientist based in New York, NY."
+    }
+  },
+  "notFound": {
+    "title": "Page not found · Kevin Kuc"
+  }
+}

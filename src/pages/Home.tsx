@@ -4,11 +4,12 @@ import { SmartToy, TrendingUp, Gavel, Psychology } from '@mui/icons-material'
 import { alpha, useTheme } from '@mui/material/styles'
 import { Link as RouterLink } from 'react-router-dom'
 import { usePageMeta } from '../utils/usePageMeta'
+import AboutSection from '../components/AboutSection'
 
 const Home: React.FC = () => {
   const theme = useTheme()
-  usePageMeta(null)
-  const heroBackground = `linear-gradient(100deg, ${alpha(theme.palette.background.default, 0.92)} 0%, ${alpha(theme.palette.background.paper, 0.7)} 48%, ${alpha(theme.palette.primary.main, 0.28)} 100%), url('/img/hero-bg.jpg') center center / cover no-repeat`
+  usePageMeta('/')
+  const heroBackground = `linear-gradient(100deg, ${alpha(theme.palette.background.default, 0.92)} 0%, ${alpha(theme.palette.background.paper, 0.7)} 48%, ${alpha(theme.palette.primary.main, 0.28)} 100%), url('/img/hero-bg.webp') center center / cover no-repeat`
 
   const featuredProjects = [
     {
@@ -61,6 +62,7 @@ const Home: React.FC = () => {
           </Typography>
           <Typography
             variant="h6"
+            component="p"
             sx={{
               color: 'text.primary',
               maxWidth: '80%',
@@ -68,7 +70,7 @@ const Home: React.FC = () => {
               fontSize: { xs: '16px', md: '18px' },
             }}
           >
-            I’m Kevin, a senior applied scientist focused on NLP, predictive modeling, and production ML. I turn raw data into deployable, measurable impact.
+            I’m Kevin, a senior applied scientist focused on LLMs, deep learning, and production ML. I turn raw data into deployable, measurable impact.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4, justifyContent: 'center' }}>
             <Button
@@ -93,9 +95,11 @@ const Home: React.FC = () => {
         </Container>
       </Box>
 
+      <AboutSection />
+
       {/* Featured Projects Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Typography variant="h4" sx={{ mb: 3, textAlign: 'center' }}>
+        <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: 'center' }}>
           Featured Projects
         </Typography>
         <Grid container spacing={4}>

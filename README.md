@@ -12,7 +12,7 @@ Requires Node 20+.
 npm install
 npm run dev       # local dev server at http://localhost:5173
 npm run lint
-npm run build     # type-checks, then builds to dist/
+npm run build     # type-checks, builds to dist/, then writes per-page HTML
 npm run preview   # serves the built dist/ locally
 ```
 
@@ -30,19 +30,26 @@ public/                 Copied as-is into the build
   manifest.json, robots.txt, sitemap.xml
 src/
   main.tsx              Entry: router + MUI theme
-  App.tsx               Routes (About, Projects, Contact, and the 404 page load on demand)
+  App.tsx               Routes (Projects, Contact, and the 404 page load on demand)
+  seo/pages.json        Title and description for each page
   theme/theme.ts        Colors, typography, component overrides
-  components/           Header, Footer, PageHeader
-  pages/                Home, About, Projects, Contact, NotFound
-  utils/usePageMeta.ts  Sets the per-page <title> and meta description
+  components/           Header, Footer, PageHeader, AboutSection (shown on Home)
+  pages/                Home, Projects, Contact, NotFound
+  utils/usePageMeta.ts  Updates title, description, canonical, and social tags on navigation
+scripts/
+  prerender-routes.mjs  Post-build: writes projects.html, contact.html, about.html
 ```
 
-## Client-side routing on GitHub Pages
+## Routing and SEO on GitHub Pages
 
-GitHub Pages has no fallback for single-page apps, so a direct visit to `/about` would 404. `public/404.html` catches that and redirects to `/?/about`. A small script in `index.html` then restores `/about` in the address bar before React Router starts. Unknown paths end up on the in-app Not Found page.
+GitHub Pages has no fallback for single-page apps. Without help, a visit to `/projects` would get `404.html` with an HTTP 404 status, and search engines would treat the page as missing.
+
+- `scripts/prerender-routes.mjs` runs after the Vite build and writes `projects.html` and `contact.html`. GitHub Pages serves `/projects` from `projects.html` with a 200 status. Each file has its own title, description, canonical URL, and social tags from `src/seo/pages.json`.
+- `about.html` redirects the old `/about` URL to the About section on the home page (`/#about`).
+- Any other path hits `public/404.html`, which redirects to `/?/path`. A script in `index.html` restores the path, and the app shows its Not Found page (marked `noindex`).
 
 ## Common edits
 
-- **Projects:** edit the `projects` array in `src/pages/Projects.tsx`. Featured cards on the home page are in `src/pages/Home.tsx`.
-- **New page:** add a component in `src/pages/`, a `<Route>` in `src/App.tsx`, a link in `Header.tsx` and `Footer.tsx`, and a URL in `public/sitemap.xml`.
+- **Projects:** edit the `projects` array in `src/pages/Projects.tsx`. Featured cards on the home page are in `src/pages/Home.tsx`; the About section is `src/components/AboutSection.tsx`.
+- **New page:** add a component in `src/pages/` that calls `usePageMeta('/path')`, an entry in `src/seo/pages.json`, a `<Route>` in `src/App.tsx`, links in `Header.tsx` and `Footer.tsx`, and a URL in `public/sitemap.xml`.
 - **Images:** put files in `public/img/` and reference them as `/img/name.jpg`. Everything in `public/` ships with the site, so delete images you stop using.

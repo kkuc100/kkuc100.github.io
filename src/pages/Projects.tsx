@@ -69,7 +69,7 @@ const projects: Project[] = [
 
 const Projects: React.FC = () => {
   const theme = useTheme()
-  usePageMeta('Projects', 'Projects by Kevin Kuc: RAG applications, production ML on AWS SageMaker, decentralized AI, NLP resume generation, and geospatial tools.')
+  usePageMeta('/projects')
 
   return (
     <Container maxWidth="lg" sx={{ py: 4, marginTop: '80px' }}>
@@ -90,7 +90,7 @@ const Projects: React.FC = () => {
             >
               <CardContent sx={{ flexGrow: 1 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
-                  <Typography variant="h6" gutterBottom sx={{ mb: 0, flex: 1 }}>
+                  <Typography variant="h6" component="h2" gutterBottom sx={{ mb: 0, flex: 1 }}>
                     {project.title}
                   </Typography>
                   <Chip
