@@ -1,6 +1,8 @@
-# kkuc100.github.io
+# Kevin Kuc · Senior Applied Scientist Portfolio
 
-Source for [kkuc100.github.io](https://kkuc100.github.io), Kevin Kuc's portfolio site.
+[![Deploy to GitHub Pages](https://github.com/kkuc100/kkuc100.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/kkuc100/kkuc100.github.io/actions/workflows/deploy.yml)
+
+Source for [kevinkuc.com](https://kevinkuc.com) (also served at [kkuc100.github.io](https://kkuc100.github.io)), Kevin Kuc's portfolio site.
 
 Built with React 18, TypeScript, Vite, Material UI, and React Router. Hosted on GitHub Pages.
 
@@ -20,12 +22,17 @@ npm run preview   # serves the built dist/ locally
 
 Pushing to `main` runs [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the site and publishes `dist/` to GitHub Pages. Other branches (such as `dev`) are not deployed.
 
+### Custom domain
+
+`kevinkuc.com` is set up through DNS A records pointing at GitHub Pages, the `public/CNAME` file, and the custom domain setting in the repository's Pages settings. Canonical URLs, the sitemap, and structured data all use `https://kevinkuc.com` (from `siteUrl` in `src/seo/pages.json` and the tags in `index.html`).
+
 ## Project layout
 
 ```
 index.html              Page shell, SEO meta tags, JSON-LD structured data
 public/                 Copied as-is into the build
   404.html              GitHub Pages SPA fallback (see below)
+  CNAME                 Custom domain (kevinkuc.com)
   img/                  Images and app icons
   manifest.json, robots.txt, sitemap.xml
 src/
@@ -55,3 +62,7 @@ GitHub Pages has no fallback for single-page apps. Without help, a visit to `/pr
 - **New page:** add a component in `src/pages/` that calls `usePageMeta('/path')`, an entry in `src/seo/pages.json`, a `<Route>` in `src/App.tsx`, links in `Header.tsx` and `Footer.tsx`, and a URL in `public/sitemap.xml`.
 - **Colors:** edit the constants at the top of `src/theme/theme.ts`, then run `python3 scripts/make-icons.py` (needs Pillow) so the favicon and app icons match. Also update `theme-color` in `index.html`, the colors in `public/manifest.json` and `public/404.html`, and the body colors in `src/index.css`.
 - **Images:** put files in `public/img/` and reference them as `/img/name.jpg`. Everything in `public/` ships with the site, so delete images you stop using.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

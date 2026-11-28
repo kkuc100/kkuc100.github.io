@@ -17,36 +17,26 @@ const projects: Project[] = [
     description:
       'Full-stack decentralized AI platform with token-based payments on Arbitrum L2. Integrates multiple LLMs (Llama 3, Claude 3.5 Sonnet, Amazon Nova) via AWS Bedrock, with React Native mobile apps, FastAPI backend, and Solidity smart contracts.',
     tags: ['Blockchain', 'LLMs', 'React Native', 'FastAPI', 'Solidity', 'AWS Bedrock', 'Arbitrum'],
-    links: []
-  },
-  {
-    title: 'Real Estate Market Analysis',
-    description:
-      'Production ML system predicting property days on market using XGBoost deployed on AWS SageMaker. Serverless architecture with React frontend, Lambda proxy, and real-time predictions via API Gateway. Handles multi-source data integration from Zillow and Realtor.com APIs.',
-    tags: ['XGBoost', 'AWS SageMaker', 'Lambda', 'React', 'MLOps', 'Time Series'],
-    links: []
+    links: [
+      { label: 'View Code', href: 'https://github.com/kkuc100/crypto_agent' }
+    ]
   },
   {
     title: 'Lawyer RAG Application',
     description:
       'Retrieval-Augmented Generation system for legal document analysis. React/TypeScript frontend with Firebase auth, AWS S3 document storage, and AI chatbot with multiple instruction modes (Research, Client Communication, Paralegal Support). Role-based access control.',
     tags: ['RAG', 'React', 'Firebase', 'AWS S3', 'NLP', 'TypeScript', 'Redux'],
-    links: []
+    links: [
+      { label: 'View Code', href: 'https://github.com/kkuc100/lawyer_rag' }
+    ]
   },
   {
     title: 'ClearanceAI - DISS Management',
     description:
       'AI-powered security clearance management system for Defense Information System for Security (DISS). Features intelligent clearance recommendations, incident tracking, investigation deadline calculations, and multi-source CSV data integration with UUID-based linking.',
     tags: ['React', 'TypeScript', 'AI Recommendations', 'Data Integration', 'Security'],
-    links: []
-  },
-  {
-    title: 'Resume Generator',
-    description:
-      'AI-powered resume generation using NLP and LLMs. Transforms raw career information into polished resumes through advanced prompt engineering, text ranking algorithms, and consistency validation.',
-    tags: ['Python', 'NLP', 'LLMs', 'Prompt Engineering'],
     links: [
-      { label: 'View Code', href: 'https://github.com/kkuc100/resume_generator' }
+      { label: 'View Code', href: 'https://github.com/kkuc100/security_clearance' }
     ]
   },
   {

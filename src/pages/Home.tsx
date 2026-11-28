@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Container, Typography, Grid, Card, CardActionArea, CardContent, Button, Stack } from '@mui/material'
-import { SmartToy, TrendingUp, Gavel, Psychology } from '@mui/icons-material'
+import { SmartToy, Gavel, Psychology } from '@mui/icons-material'
 import { alpha, useTheme } from '@mui/material/styles'
 import { Link as RouterLink } from 'react-router-dom'
 import { usePageMeta } from '../utils/usePageMeta'
@@ -16,11 +16,6 @@ const Home: React.FC = () => {
       icon: <SmartToy />,
       title: 'RAGMint - Decentralized AI Platform',
       description: 'Full-stack decentralized AI platform with token-based payments on Arbitrum L2. Integrates multiple LLMs via AWS Bedrock, with React Native mobile apps, FastAPI backend, and Solidity smart contracts.',
-    },
-    {
-      icon: <TrendingUp />,
-      title: 'Real Estate Market Analysis',
-      description: 'Production ML system predicting property days on market using XGBoost deployed on AWS SageMaker. Serverless architecture with React frontend, Lambda proxy, and real-time predictions via API Gateway.',
     },
     {
       icon: <Gavel />,
@@ -58,7 +53,7 @@ const Home: React.FC = () => {
               fontSize: { xs: '30px', md: '48px' },
             }}
           >
-            Building Intelligent Systems with Data
+            Senior Applied Scientist | LLMs, RAG, Computer Vision
           </Typography>
           <Typography
             variant="h6"
@@ -70,7 +65,7 @@ const Home: React.FC = () => {
               fontSize: { xs: '16px', md: '18px' },
             }}
           >
-            I’m Kevin, a senior applied scientist focused on LLMs, deep learning, and production ML. I turn raw data into deployable, measurable impact.
+            I'm Kevin, a Senior Applied Scientist at a stealth NYC startup building production ML systems. Specializing in LLMs, GraphRAG, geospatial computer vision with SAM 3, and MCP tools. Former USMC Intelligence Officer. Active TS/SCI clearance. UC Berkeley MIDS.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4, justifyContent: 'center' }}>
             <Button
@@ -111,7 +106,7 @@ const Home: React.FC = () => {
         </Typography>
         <Grid container spacing={4}>
           {featuredProjects.map((project) => (
-            <Grid item xs={12} sm={6} md={3} key={project.title}>
+            <Grid item xs={12} sm={6} md={4} key={project.title}>
               <Card
                 sx={{
                   height: '100%',
