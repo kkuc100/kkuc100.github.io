@@ -38,6 +38,7 @@ src/
   utils/usePageMeta.ts  Updates title, description, canonical, and social tags on navigation
 scripts/
   prerender-routes.mjs  Post-build: writes projects.html, contact.html, about.html
+  make-icons.py         Regenerates favicon and app icons from the theme colors
 ```
 
 ## Routing and SEO on GitHub Pages
@@ -52,4 +53,5 @@ GitHub Pages has no fallback for single-page apps. Without help, a visit to `/pr
 
 - **Projects:** edit the `projects` array in `src/pages/Projects.tsx`. Featured cards on the home page are in `src/pages/Home.tsx`; the About section is `src/components/AboutSection.tsx`.
 - **New page:** add a component in `src/pages/` that calls `usePageMeta('/path')`, an entry in `src/seo/pages.json`, a `<Route>` in `src/App.tsx`, links in `Header.tsx` and `Footer.tsx`, and a URL in `public/sitemap.xml`.
+- **Colors:** edit the constants at the top of `src/theme/theme.ts`, then run `python3 scripts/make-icons.py` (needs Pillow) so the favicon and app icons match. Also update `theme-color` in `index.html`, the colors in `public/manifest.json` and `public/404.html`, and the body colors in `src/index.css`.
 - **Images:** put files in `public/img/` and reference them as `/img/name.jpg`. Everything in `public/` ships with the site, so delete images you stop using.

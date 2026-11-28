@@ -83,8 +83,15 @@ const Home: React.FC = () => {
               View GitHub
             </Button>
             <Button
-              variant="contained"
-              color="secondary"
+              variant="outlined"
+              color="primary"
+              sx={{
+                color: 'primary.light',
+                borderColor: 'primary.main',
+                backgroundColor: alpha(theme.palette.background.default, 0.55),
+                backdropFilter: 'blur(6px)',
+                '&:hover': { backgroundColor: alpha(theme.palette.background.default, 0.75) },
+              }}
               href="https://www.linkedin.com/in/kevinkuc"
               target="_blank"
               rel="noopener noreferrer"
